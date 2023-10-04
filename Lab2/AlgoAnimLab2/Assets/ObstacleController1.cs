@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathController : MonoBehaviour
+public class ObstacleController : MonoBehaviour
 {
     [SerializeField] public PathManager pathManager;
 
@@ -12,8 +12,7 @@ public class PathController : MonoBehaviour
     public float moveSpeed;
     public float rotateSpeed;
 
-    [HideInInspector]
-    public int blockingObjectCount = 0;
+
 
     private void Start()
     {
@@ -57,17 +56,6 @@ public class PathController : MonoBehaviour
         {
             target = pathManager.GetNextPoint();
         }
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            blockingObjectCount += 1;
-        }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            blockingObjectCount -= 1;
-        }
-    }
 }
