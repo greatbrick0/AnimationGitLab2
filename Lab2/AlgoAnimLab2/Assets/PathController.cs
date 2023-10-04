@@ -50,6 +50,9 @@ public class PathController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        target = pathManager.GetNextPoint();
+        if (other.gameObject.CompareTag("Waypoint"))
+        {
+            target = pathManager.GetNextPoint();
+        }
     }
 }

@@ -47,8 +47,10 @@ public class PathManager : MonoBehaviour
 
     private void Update()
     {
+        //print("start");
         for(int ii = 0; ii < path.Count; ii++)
         {
+            //print(ii + " " + path.Count + " " + prefabPoints.Count);
             Waypoint p = path[ii];
             GameObject g = prefabPoints[ii];
             g.transform.position = p.pos;
