@@ -31,5 +31,6 @@ public class PlayerScript : MonoBehaviour
     public void Jump(float amount)
     {
         rb.velocity = new Vector3(rb.velocity.x, amount, rb.velocity.z);
+        transform.parent.GetComponent<Holder>().PlayJumpSound();
     }
 }

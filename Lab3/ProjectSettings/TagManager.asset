@@ -6,6 +6,7 @@ TagManager:
   tags:
   - XWall
   - YWall
+  - Hat
   layers:
   - Default
   - TransparentFX
